@@ -1,7 +1,7 @@
 import './App.css'
-import AsideSection from './components/aside/AsideSection'
-import MainSection from './components/main/MainSection'
-import NavigationSection from './components/navigation/NavigationSection'
+import NavigationSidebar from './components/navigation/NavigationSidebar'
+import TrendsSection from './components/trends/AsideSection'
+import TimelineSection from './components/timeline/TimelineSection'
 
 function App() {
 
@@ -9,13 +9,13 @@ function App() {
     <>
       <div className='sm:flex flex-row justify-between'>
         <div className='sm:flex-none '>
-        <NavigationSection/>
+        <NavigationSidebar/>
         </div>
         <div className='sm:flex-auto'>
-        <MainSection/>
+        <TimelineSection/>
         </div>
         <div className=''>
-        <AsideSection/>
+        <TrendsSection/>
         </div>
 
 

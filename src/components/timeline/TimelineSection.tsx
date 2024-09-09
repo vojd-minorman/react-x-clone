@@ -1,6 +1,6 @@
 
 
-export default function MainSection() {
+export default function TimelineSection() {
     return (
         <div className='navigation'>
         <div className=''>

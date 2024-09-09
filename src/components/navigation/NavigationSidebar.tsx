@@ -1,7 +1,7 @@
 import NavList from "./NavList";
 
 
-export default function NavigationSection() {
+export default function NavigationSidebar() {
     return (
         <div className='navigation'>
 

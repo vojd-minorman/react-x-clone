@@ -10,7 +10,7 @@ export default function NavigationSidebar() {
                     <img src="/social.png" alt="" className="w-10" />
                 </div>
                 <NavList
-                    images="/utilisateur.png"
+                    images="/nichoir.png"
                     text="Home"
                 />
                 <NavList

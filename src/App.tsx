@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className='sm:flex flex-row justify-between'>
-        <div className='sm:flex-none '>
+        <div className='sm:flex-auto'>
         <NavigationSidebar/>
         </div>
         <div className='sm:flex-auto'>

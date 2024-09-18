@@ -1,3 +1,5 @@
+import TweetEditor from "./tweetEditor/tweetEditor";
+
 
 
 export default function TimelineSection() {
@@ -5,13 +7,7 @@ export default function TimelineSection() {
         <div className='navigation'>
         <div className=''>
             <div className=''>
-                <div className=''>
-                    <i></i>
-                </div>
-                <div>
-                  <p>Home</p> 
-                </div>  
-                
+                <TweetEditor/>             
             </div>
         </div>
     </div>

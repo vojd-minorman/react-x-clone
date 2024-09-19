@@ -3,7 +3,7 @@ import NavList from "./NavList";
 
 export default function NavigationSidebar() {
     return (
-        <div className='navigation fixed'>
+        <div className='navigation'>
 
             <ul className='flex flex-col'>
                 <div className="pb-6">

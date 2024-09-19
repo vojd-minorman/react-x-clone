@@ -1,4 +1,4 @@
-import TweetEditor from "./tweetEditor/tweetEditor";
+import TweetEditor from "./tweetEditor/TweetEditor";
 
 
 

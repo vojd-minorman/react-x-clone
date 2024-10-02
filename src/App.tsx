@@ -5,15 +5,19 @@ import TimelineSection from './components/timeline/TimelineSection'
 
 function App() {
   return (
-    <div className='sm:flex flex-row justify-between'>
-      <div className='sm:flex-none hidden sm:block lg:w-1/4 xl:w-1/5'>
-        <NavigationSidebar/>
-      </div>
-      <div className='sm:flex-auto lg:w-1/2 xl:w-3/5'>
-        <TimelineSection/>
-      </div>
-      <div className='hidden lg:block lg:w-1/4 xl:w-1/5'>
-        <TrendsSection/>
+    <div className="max-w-screen-lg mx-auto">
+      <div className='flex flex-col sm:flex-row'>
+        <div className='w-full sm:w-1/4 sm:fixed sm:h-screen sm:overflow-y-auto'>
+          <NavigationSidebar/>
+        </div>
+        <div className='w-full sm:w-3/4 sm:ml-[15%] flex flex-col lg:flex-row'>
+          <div className='w-full lg:w-2/3'>
+            <TimelineSection/>
+          </div>
+          <div className='w-full lg:w-1/3'>
+            <TrendsSection/>
+          </div>
+        </div>
       </div>
     </div>
   )

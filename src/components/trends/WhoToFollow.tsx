@@ -30,7 +30,7 @@ const accounts: Account[] = [
 
 function FollowButton() {
   return (
-    <button className="bg-white text-black font-bold py-1 px-4 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200">
+    <button className="bg-white text-black py-1 px-4 rounded-full text-xs hover:bg-gray-200 transition-colors duration-200">
       Follow
     </button>
   )
@@ -47,7 +47,7 @@ export default function WhoToFollow() {
               <img src={account.imageUrl} alt={account.name} className="w-12 h-12 rounded-full mr-3" />
               <div>
                 <div className="flex items-center">
-                  <span className="font-bold">{account.name}</span>
+                  <span className="text-xs pe-2">{account.name} </span>
                   {account.verified &&               <svg
                 width="18"
                 height="18"

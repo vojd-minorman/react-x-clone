@@ -6,7 +6,7 @@ export default function NavigationSidebar() {
         <div className='navigation  top-0 left-0 h-screen flex flex-col justify-between p-4 lg:w-1/4 xl:w-1/5'>
             <div>
                 <div className="pb-6">
-                    <img src="/social.png" alt="Logo" className="w-10" />
+                    <img src="/twitter.png" alt="Logo" className="imgNav" />
                 </div>
                 <nav>
                     <ul className='flex flex-col space-y-2'>
@@ -19,7 +19,7 @@ export default function NavigationSidebar() {
                     </ul>
                 </nav>
                 <div className="py-8">
-                    <button className="btn-tweet px-16 py-2 rounded-full w-full">Tweet</button>
+                    <button className="btn-tweet px-16 py-2 rounded-full ">Tweet</button>
                 </div>
             </div>
             <AccountHeader 

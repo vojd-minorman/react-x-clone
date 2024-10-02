@@ -1,14 +1,18 @@
+import SearchBar from "./SearchBar";
 import TrendsForYou from "./TrendForYou";
 import WhoToFollow from "./WhoToFollow";
 
 
 export default function AsideSection() {
     return (
-        <div className='navigation'>
-            <div className="px-8 py-4">
+        <div className='navigation px-8'>
+            <div className="py-4">
+                <SearchBar/>
+            </div>
+            <div className="py-4">
             <TrendsForYou/>
             </div>
-            <div className="px-8 py-4">
+            <div className="py-4">
                 <WhoToFollow/>
             </div>
         

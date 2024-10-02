@@ -5,7 +5,7 @@ interface NavListProps{
 
 export default function NavList(props:NavListProps) {
     return (
-    <li className='flex flex-row gap-3 items-center py-4'>
+    <li className='flex flex-row gap-3 items-center py-2'>
         <div className=''>
             <img src={props.images} alt="" className="imgNav w-6"/>
         </div>

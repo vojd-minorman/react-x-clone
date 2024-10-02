@@ -3,13 +3,13 @@ import NavList from "./NavList";
 
 export default function NavigationSidebar() {
     return (
-        <div className='navigation fixed top-0 left-0 h-screen flex flex-col justify-between p-4 lg:w-1/4 xl:w-1/5'>
+        <div className='navigation  top-0 left-0 h-screen flex flex-col justify-between p-4 lg:w-1/4 xl:w-1/5'>
             <div>
                 <div className="pb-6">
                     <img src="/social.png" alt="Logo" className="w-10" />
                 </div>
                 <nav>
-                    <ul className=''>
+                    <ul className='flex flex-col space-y-2'>
                         <NavList images="/nichoir.png" text="Home" />
                         <NavList images="/hashtags.png" text="Explore" />
                         <NavList images="/cloche.png" text="Notifications" />

@@ -1,19 +1,17 @@
+import TrendsForYou from "./TrendForYou";
+import WhoToFollow from "./WhoToFollow";
 
 
 export default function AsideSection() {
     return (
         <div className='navigation'>
-        <div className=''>
-            <div className=''>
-                <div className=''>
-                    <i></i>
-                </div>
-                <div>
-                  <p>Home</p> 
-                </div>  
-                
+            <div className="px-8 py-4">
+            <TrendsForYou/>
             </div>
-        </div>
+            <div className="px-8 py-4">
+                <WhoToFollow/>
+            </div>
+        
     </div>
     )
 }

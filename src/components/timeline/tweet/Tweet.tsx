@@ -52,7 +52,7 @@ export default function Tweet({
               </svg>
             </div>
             <p className="text-[#6E767D]">
-              <a href="">{username}</a>
+              <a href=" ">{username}</a>
             </p>
             <p className="text-[#6E767D]">.</p>
             <p className="text-[#6E767D]">{createdAt}</p>

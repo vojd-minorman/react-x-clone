@@ -47,7 +47,7 @@ export default function NavigationSidebar() {
                     </div>
                 </ul>
             </div>
-            <div className="mt-auto">
+            <div className="pb-14">
                 <AccountHeader 
                     name="Neville Mitshiabu" 
                     username="@vojdminorman" 

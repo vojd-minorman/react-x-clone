@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Tweet from "./tweet/Tweet";
 import TweetEditor from "./tweetEditor/TweetEditor";
 import data from '../../../data.json';

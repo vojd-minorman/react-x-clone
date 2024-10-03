@@ -4,8 +4,8 @@ import NavList from "./NavList";
 
 export default function NavigationSidebar() {
     return (
-        <div className='navigation flex flex-col justify-between h-screen'>
-            <div>
+        <div className='navigation flex flex-col justify-between h-screen p-4'>
+            <div >
                 <ul className='flex flex-col'>
                     <div className="pb-6">
                         <Link to="/">
@@ -47,7 +47,7 @@ export default function NavigationSidebar() {
                     </div>
                 </ul>
             </div>
-            <div className="pb-14">
+            <div className="">
                 <AccountHeader 
                     name="Neville Mitshiabu" 
                     username="@vojdminorman" 

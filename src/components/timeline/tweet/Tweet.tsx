@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Repeat2, Heart, Share } from 'lucide-react';
 
@@ -35,7 +35,7 @@ function getRelativeTime(dateString: string): string {
 
   const intervals = [
     { label: 'an', seconds: 31536000 },
-    { label: ' mois', seconds: 2592000 },
+    { label: 'mois', seconds: 2592000 },
     { label: 'sem', seconds: 604800 },
     { label: 'j', seconds: 86400 },
     { label: 'h', seconds: 3600 },
@@ -47,15 +47,22 @@ function getRelativeTime(dateString: string): string {
     const interval = intervals[i];
     const count = Math.floor(diffInSeconds / interval.seconds);
     if (count >= 1) {
-      if (interval.label === 'an') {
-        return `${count} ${interval.label}${count > 1 ? 's' : ''}`;
+      if (interval.label === 'mois' || interval.label === 'an') {
+        return `il y a ${count} ${interval.label}${count > 1 ? 's' : ''}`;
       } else {
-        return `${count}${interval.label}`;
+        return `il y a ${count}${interval.label}`;
       }
     }
   }
 
   return 'à l\'instant';
+}
+
+function truncateUsername(username: string): string {
+  if (username.length > 5) {
+    return username.slice(0, 5) + '...';
+  }
+  return username;
 }
 
 export default function Tweet({
@@ -97,15 +104,18 @@ export default function Tweet({
     setCommentCount(commentCount + 1);
   };
 
+  const truncatedUsername = truncateUsername(username);
+
   return (
-    <div className="border-b border-gray-800 py-4 sm:p-4 flex">
+    <div className="border-b border-gray-800 ">
+      <div className='p-4 flex'>
       <Link to={`/profile/${username.replace('@', '')}`} className="flex-shrink-0 mr-3">
         <img src={userImage} alt={name} className="w-12 h-12 rounded-full" />
       </Link>
       <div className="flex-grow">
         <div className="flex items-center">
           <Link to={`/profile/${username.replace('@', '')}`} className="font-bold hover:underline">{name}</Link>
-          <span className="text-gray-500 ml-2">{username}</span>
+          <span className="text-gray-500 ml-2" title={username}>{truncatedUsername}</span>
           <span className="text-gray-500 mx-1">·</span>
           <span className="text-gray-500">{getRelativeTime(createdAt)}</span>
         </div>
@@ -137,6 +147,7 @@ export default function Tweet({
             <Share className="w-5 h-5" />
           </button>
         </div>
+      </div>
       </div>
     </div>
   );

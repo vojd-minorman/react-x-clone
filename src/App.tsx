@@ -14,7 +14,7 @@ function App() {
         </div>
         <div className='flex-1 lg:ml-[280px]'>
           <div className='flex flex-col lg:flex-row'>
-            <main className='sm:flex-1 sm:border-x border-[#2F3336]'>
+            <main className='sm:flex-1 sm:border-x border-[#2F3336] m-0'>
               <Routes>
                 <Route path="/" element={<TimelineSection />} />
                 <Route path="/profile/:username" element={<Profile />} />

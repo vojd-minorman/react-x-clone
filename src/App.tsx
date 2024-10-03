@@ -8,21 +8,21 @@ import Profile from './components/profile/Profile'
 function App() {
   return (
     <Router>
-      <div className="max-w-screen-xl mx-auto">
-        <div className='flex flex-col sm:flex-row'>
-          <div className='w-full sm:w-[280px] sm:fixed sm:h-screen sm:overflow-y-auto'>
-            <NavigationSidebar/>
-          </div>
-          <div className='w-full sm:ml-[280px] flex flex-col lg:flex-row'>
-            <div className='w-full lg:w-[calc(100%-350px)] border-x border-[#2F3336]'>
+      <div className="max-w-screen-xl mx-auto flex">
+        <div className='w-[280px] fixed h-screen overflow-y-auto hidden lg:block'>
+          <NavigationSidebar/>
+        </div>
+        <div className='flex-1 lg:ml-[280px]'>
+          <div className='flex flex-col lg:flex-row'>
+            <main className='sm:flex-1 sm:border-x border-[#2F3336]'>
               <Routes>
                 <Route path="/" element={<TimelineSection />} />
                 <Route path="/profile/:username" element={<Profile />} />
               </Routes>
-            </div>
-            <div className='w-full lg:w-[350px]'>
+            </main>
+            <aside className='w-full lg:w-[350px] hidden lg:block'>
               <TrendsSection/>
-            </div>
+            </aside>
           </div>
         </div>
       </div>

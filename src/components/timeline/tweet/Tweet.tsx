@@ -25,7 +25,7 @@ export default function Tweet({
   likes
 }: TweetProps) {
   return (
-    <div className="border-b border-gray-800 p-4 flex">
+    <div className="border-b border-gray-800 py-4 sm:p-4 flex">
       <Link to={`/profile/${username.replace('@', '')}`} className="flex-shrink-0 mr-3">
         <img src={userImage} alt={name} className="w-12 h-12 rounded-full" />
       </Link>

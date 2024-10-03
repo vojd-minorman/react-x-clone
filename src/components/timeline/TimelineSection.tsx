@@ -1,69 +1,55 @@
+import React, { useEffect, useState } from 'react';
 import Tweet from "./tweet/Tweet";
 import TweetEditor from "./tweetEditor/TweetEditor";
+import data from '../../../data.json';
 
+interface User {
+  id: string;
+  name: string;
+  username: string;
+  profileImage: string;
+}
 
+interface TweetData {
+  id: string;
+  userId: string;
+  text: string;
+  createdAt: string;
+  comments: string;
+  retweets: string;
+  likes: string;
+  tweetImage?: string;
+}
 
 export default function TimelineSection() {
+    const [tweets, setTweets] = useState<(TweetData & { user: User })[]>([]);
+
+    useEffect(() => {
+        const processedTweets = data.tweets.map(tweet => {
+            const user = data.users.find(user => user.id === tweet.userId);
+            if (!user) throw new Error(`User not found for tweet ${tweet.id}`);
+            return { ...tweet, user };
+        });
+        setTweets(processedTweets);
+    }, []);
+
     return (
-        <div className=''>
-
-            <div className=''>
-                <TweetEditor />
+        <div className='w-full'>
+            <TweetEditor />
+            {tweets.map(tweet => (
                 <Tweet
-                    name="CNN"
-                    username="@CNN"
-                    userImage="tweet-profile-photo.png"
-                    createdAt="7m"
-                    text='President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a "major breakthrough" that would serve to both strengthen the US steel industry and combat the global climate crisis.'
-                    comments="57"
-                    retweets="144"
-                    likes="184"
+                    key={tweet.id}
+                    name={tweet.user.name}
+                    username={`@${tweet.user.username}`}
+                    userImage={tweet.user.profileImage}
+                    createdAt={new Date(tweet.createdAt).toLocaleDateString()}
+                    text={tweet.text}
+                    tweetImage={tweet.tweetImage}
+                    comments={tweet.comments}
+                    retweets={tweet.retweets}
+                    likes={tweet.likes}
                 />
-                
-                <Tweet
-                    name="The New York Times"
-                    username="@nytimes"
-                    userImage="nytimes-avatar.png"
-                    createdAt="2h"
-                    text="Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land"
-                    tweetImage="tweet-image.png"
-                    comments="19"
-                    retweets="48"
-                    likes="482"
-                />
-                <Tweet
-                    name="Twitter"
-                    username="@Twitter"
-                    userImage="tweeter-avatar.png"
-                    createdAt="Oct 29"
-                    text="BIG NEWS lol jk still Twitter"
-                    comments="6.8k"
-                    retweets="36.6k"
-                    likes="267.1k"
-                />
-                <Tweet
-                    name="Twitter"
-                    username="@Twitter"
-                    userImage="tweeter-avatar.png"
-                    createdAt="Oct 4"
-                    text="hello literally everyone"
-                    comments="118.7k"
-                    retweets="785.4k"
-                    likes="3.3M"
-                />
-                <Tweet
-                    name="Twitter"
-                    username="@Twitter"
-                    userImage="tweeter-avatar.png"
-                    createdAt="Oct 4"
-                    text="hello literally everyone"
-                    comments="118.7k"
-                    retweets="785.4k"
-                    likes="3.3M"
-                    tweetImage="tweet-image.png"
-                />
-            </div>
+            ))}
         </div>
-
     )
 }

@@ -1,0 +1,114 @@
+{
+    "users": [
+      {
+        "id": "0",
+        "name": "Neville Mitshiabu",
+        "username": "vojdminorman",
+        "profileImage": "profile-photo.png",
+        "bio": "Développeur passionné | Créateur de contenu tech | Toujours en quête d'apprentissage",
+        "location": "Kinshasa, République Démocratique du Congo",
+        "website": "https://nevillemitshiabu.dev",
+        "joinDate": "Janvier 2019",
+        "followers": 1500,
+        "following": 750,
+        "tweetsCount": 3200
+      },
+      {
+        "id": "1",
+        "name": "CNN",
+        "username": "CNN",
+        "profileImage": "cnn-avatar.png",
+        "bio": "Breaking news from around the world",
+        "location": "Worldwide",
+        "website": "https://cnn.com",
+        "joinDate": "March 2007",
+        "followers": 60000000,
+        "following": 1000,
+        "tweetsCount": 265000
+      },
+      {
+        "id": "2",
+        "name": "The New York Times",
+        "username": "nytimes",
+        "profileImage": "nytimes-avatar.png",
+        "bio": "News from The New York Times, covering world, national, New York, business, technology, science, health, arts, sports and more.",
+        "location": "New York City",
+        "website": "https://nytimes.com",
+        "joinDate": "March 2007",
+        "followers": 50000000,
+        "following": 800,
+        "tweetsCount": 390000
+      },
+      {
+        "id": "3",
+        "name": "Twitter",
+        "username": "Twitter",
+        "profileImage": "tweeter-avatar.png",
+        "bio": "What's happening?!",
+        "location": "San Francisco, CA",
+        "website": "https://about.twitter.com",
+        "joinDate": "March 2006",
+        "followers": 62000000,
+        "following": 0,
+        "tweetsCount": 14300
+      }
+    ],
+    "tweets": [
+      {
+        "id": "0",
+        "userId": "0",
+        "text": "Excité de partager mon dernier projet : un clone de Twitter construit avec React et Tailwind CSS. Le code source est disponible sur mon GitHub. N'hésitez pas à le tester et à me faire part de vos retours !",
+        "createdAt": "2023-05-15T11:30:00Z",
+        "comments": "23",
+        "retweets": "45",
+        "likes": "137"
+      },
+      {
+        "id": "1",
+        "userId": "1",
+        "text": "President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a \"major breakthrough\" that would serve to both strengthen the US steel industry and combat the global climate crisis.",
+        "createdAt": "2023-05-15T10:30:00Z",
+        "comments": "57",
+        "retweets": "144",
+        "likes": "184"
+      },
+      {
+        "id": "2",
+        "userId": "2",
+        "text": "Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
+        "createdAt": "2023-05-15T09:00:00Z",
+        "tweetImage": "tweet-image.png",
+        "comments": "19",
+        "retweets": "48",
+        "likes": "482"
+      },
+      {
+        "id": "3",
+        "userId": "3",
+        "text": "BIG NEWS lol jk still Twitter",
+        "createdAt": "2023-05-14T15:45:00Z",
+        "comments": "6800",
+        "retweets": "36600",
+        "likes": "267100"
+      },
+      {
+        "id": "4",
+        "userId": "3",
+        "text": "hello literally everyone",
+        "createdAt": "2023-05-14T12:00:00Z",
+        "comments": "118700",
+        "retweets": "785400",
+        "likes": "3300000"
+      },
+      {
+        "id": "5",
+        "userId": "3",
+        "text": "hello literally everyone",
+        "createdAt": "2023-05-14T11:00:00Z",
+        "tweetImage": "tweet-image.png",
+        "comments": "118700",
+        "retweets": "785400",
+        "likes": "3300000"
+      }
+    ]
+  }

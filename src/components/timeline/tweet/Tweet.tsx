@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Repeat2, Heart, Share } from 'lucide-react';
 
@@ -12,6 +12,50 @@ interface TweetProps {
   comments: string;
   retweets: string;
   likes: string;
+}
+
+function formatNumber(num: number): string {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M';
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  }
+  return num.toString();
+}
+
+function getRelativeTime(dateString: string): string {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  if (isNaN(diffInSeconds)) {
+    console.error('Invalid date:', dateString);
+    return 'Date invalide';
+  }
+
+  const intervals = [
+    { label: 'an', seconds: 31536000 },
+    { label: ' mois', seconds: 2592000 },
+    { label: 'sem', seconds: 604800 },
+    { label: 'j', seconds: 86400 },
+    { label: 'h', seconds: 3600 },
+    { label: 'min', seconds: 60 },
+    { label: 's', seconds: 1 }
+  ];
+
+  for (let i = 0; i < intervals.length; i++) {
+    const interval = intervals[i];
+    const count = Math.floor(diffInSeconds / interval.seconds);
+    if (count >= 1) {
+      if (interval.label === 'an') {
+        return `${count} ${interval.label}${count > 1 ? 's' : ''}`;
+      } else {
+        return `${count}${interval.label}`;
+      }
+    }
+  }
+
+  return 'à l\'instant';
 }
 
 export default function Tweet({
@@ -63,7 +107,7 @@ export default function Tweet({
           <Link to={`/profile/${username.replace('@', '')}`} className="font-bold hover:underline">{name}</Link>
           <span className="text-gray-500 ml-2">{username}</span>
           <span className="text-gray-500 mx-1">·</span>
-          <span className="text-gray-500">{createdAt}</span>
+          <span className="text-gray-500">{getRelativeTime(createdAt)}</span>
         </div>
         <p className="mt-2 mb-2">{text}</p>
         {tweetImage && <img src={tweetImage} alt="Tweet content" className="rounded-2xl max-h-80 w-full object-cover mb-3" />}
@@ -73,21 +117,21 @@ export default function Tweet({
             className="flex items-center hover:text-blue-500 transition-colors duration-200"
           >
             <MessageCircle className="w-5 h-5 mr-1" />
-            <span>{commentCount}</span>
+            <span>{formatNumber(commentCount)}</span>
           </button>
           <button 
             onClick={handleRetweet}
             className={`flex items-center hover:text-green-500 transition-colors duration-200 ${isRetweeted ? 'text-green-500' : ''}`}
           >
             <Repeat2 className="w-5 h-5 mr-1" />
-            <span>{retweetCount}</span>
+            <span>{formatNumber(retweetCount)}</span>
           </button>
           <button 
             onClick={handleLike}
             className={`flex items-center hover:text-pink-500 transition-colors duration-200 ${isLiked ? 'text-pink-500' : ''}`}
           >
             <Heart className="w-5 h-5 mr-1" />
-            <span>{likeCount}</span>
+            <span>{formatNumber(likeCount)}</span>
           </button>
           <button className="hover:text-blue-500 transition-colors duration-200">
             <Share className="w-5 h-5" />

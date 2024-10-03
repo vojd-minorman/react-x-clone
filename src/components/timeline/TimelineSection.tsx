@@ -42,7 +42,7 @@ export default function TimelineSection() {
                     name={tweet.user.name}
                     username={`@${tweet.user.username}`}
                     userImage={tweet.user.profileImage}
-                    createdAt={new Date(tweet.createdAt).toLocaleDateString()}
+                    createdAt={tweet.createdAt}
                     text={tweet.text}
                     tweetImage={tweet.tweetImage}
                     comments={tweet.comments}
